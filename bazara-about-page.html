@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Bazara - Tech Market</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        :root {
+            --primary-bg: #f4f4f4;
+            --secondary-bg: #ffffff;
+            --text-primary: #121212;
+            --text-secondary: #666666;
+            --accent: #000000;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header {
+            background-color: var(--secondary-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+
+        .main-content {
+            margin-top: 90px;
+            padding: 2rem 0;
+        }
+
+        .about-section {
+            background-color: var(--secondary-bg);
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .about-section h1 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .about-section p {
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            text-align: center;
+        }
+
+        .team-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background-color: var(--primary-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .team-member h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 1.5rem;
+            }
+
+            .about-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="bazara-about-page.html">
+                <img src="logo4.png" alt="Bazara Logo" class="logo" width="65" height="auto">
+            </a>
+            <nav class="nav-menu">
+                <a href="shop-page (1).html">Home</a>
+                <a href="laptop-page.html">Laptops</a>
+                <a href="smartphone-page.html">Smartphones</a>
+                <a href="gaming-page.html">Gaming</a>
+                <a href="#" class="cart-icon">
+                    Cart
+                    <span class="cart-count">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="about-section">
+            <h1>About 4.0 Tech Market</h1>
+            <p>
+                Founded in 2018, Bazara is more than just a tech store – we're a passionate community of technology enthusiasts dedicated to bringing the latest and most innovative digital experiences to our customers. Our mission is to bridge the gap between cutting-edge technology and everyday users.
+            </p>
+            <p>
+                We carefully curate our product lineup, ensuring that each item represents the pinnacle of innovation, performance, and design. From powerful gaming laptops to smart smartphones and immersive gaming consoles, we're committed to providing tech that transforms and elevates your digital lifestyle.
+            </p>
+            <p>
+                At Bazara, we believe technology should be accessible, exciting, and tailored to your unique needs. Our team of experts is dedicated to providing personalized guidance, ensuring you find the perfect tech companion that matches your style, work, and play.
+            </p>
+
+            <div class="team-section">
+                <div class="team-member">
+                    <img src="/api/placeholder/120/120" alt="Maya Rodriguez">
+                    <h3>Maya Rodriguez</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/120/120" alt="Alex Chen">
+                    <h3>Alex Chen</h3>
+                    <p>Chief Technology Officer</p>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/120/120" alt="Lena Kim">
+                    <h3>Lena Kim</h3>
+                    <p>Head of Customer Experience</p>
+                </div>
+                <div class="team-member">
+                    <img src="/api/placeholder/120/120" alt="Marcus Okonkwo">
+                    <h3>Marcus Okonkwo</h3>
+                    <p>Product Acquisition Lead</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+

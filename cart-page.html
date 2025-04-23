@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Bazara Tech Market</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        :root {
+            --primary-bg: #f4f4f4;
+            --secondary-bg: #ffffff;
+            --text-primary: #121212;
+            --text-secondary: #666666;
+            --accent: #000000;
+            --border-color: #e0e0e0;
+            --alert-bg: #f8d7da;
+            --alert-text: #721c24;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--secondary-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+
+        .cart-icon {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 90px;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .cart-section {
+            flex: 2;
+        }
+
+        .order-summary {
+            flex: 1;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .cart-header h1 {
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        .cart-item {
+            background-color: var(--secondary-bg);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .cart-item-image {
+            width: 120px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1rem;
+        }
+
+        .cart-item-details {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item-specs {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .quantity-btn {
+            background-color: var(--primary-bg);
+            border: 1px solid var(--border-color);
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            height: 30px;
+        }
+
+        .cart-item-price {
+            font-weight: 700;
+            margin-left: 1rem;
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            margin-left: auto;
+        }
+
+        .remove-item:hover {
+            color: var(--accent);
+        }
+
+        .order-summary {
+            background-color: var(--secondary-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            height: fit-content;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .summary-total {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .checkout-btn:hover {
+            background-color: #333;
+        }
+
+        .empty-cart {
+            background-color: var(--alert-bg);
+            color: var(--alert-text);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cart-item-image {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .quantity-control {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="bazara-about-page.html">
+                <img src="logo4.png" alt="Bazara Logo" class="logo" width="65" height="auto">
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="#">Laptops</a>
+                <a href="#">Smartphones</a>
+                <a href="#">Gaming</a>
+                <a href="#" class="cart-icon">
+                    Cart
+                    <span class="cart-count">3</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="cart-section">
+            <div class="cart-header">
+                <h1>Your Cart</h1>
+                <button class="remove-item">Clear Cart</button>
+            </div>
+
+            <!-- Cart Items -->
+            <div class="cart-item">
+                <img src="/api/placeholder/120/100" alt="ASUS ROG Laptop" class="cart-item-image">
+                <div class="cart-item-details">
+                    <div class="cart-item-title">ASUS ROG Gaming Laptop</div>
+                    <div class="cart-item-specs">RTX 4080 • 32GB RAM • 1TB SSD</div>
+                    <div class="quantity-control">
+                        <button class="quantity-btn">-</button>
+                        <input type="text" value="1" class="quantity-input" readonly>
+                        <button class="quantity-btn">+</button>
+                    </div>
+                </div>
+                <div class="cart-item-price">R20,499</div>
+                <button class="remove-item">✕</button>
+            </div>
+
+            <div class="cart-item">
+                <img src="/api/placeholder/120/100" alt="iPhone 15 Pro Max" class="cart-item-image">
+                <div class="cart-item-details">
+                    <div class="cart-item-title">iPhone 15 Pro Max</div>
+                    <div class="cart-item-specs">A17 Pro • 256GB • 6.7" Display</div>
+                    <div class="quantity-control">
+                        <button class="quantity-btn">-</button>
+                        <input type="text" value="1" class="quantity-input" readonly>
+                        <button class="quantity-btn">+</button>
+                    </div>
+                </div>
+                <div class="cart-item-price">R14,199</div>
+                <button class="remove-item">✕</button>
+            </div>
+
+            <div class="cart-item">
+                <img src="/api/placeholder/120/100" alt="AirPods Pro" class="cart-item-image">
+                <div class="cart-item-details">
+                    <div class="cart-item-title">AirPods Pro (2nd Gen)</div>
+                    <div class="cart-item-specs">Active Noise Cancellation • Wireless Charging</div>
+                    <div class="quantity-control">
+                        <button class="quantity-btn">-</button>
+                        <input type="text" value="1" class="quantity-input" readonly>
+                        <button class="quantity-btn">+</button>
+                    </div>
+                </div>
+                <div class="cart-item-price">R4,799</div>
+                <button class="remove-item">✕</button>
+            </div>
+        </section>
+
+        <section class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span>R39,497</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span>R299</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax (15%)</span>
+                <span>R5,925</span>
+            </div>
+            <div class="summary-row summary-total">
+                <span>Total</span>
+                <span>R45,721</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </section>
+    </main>
+</body>
+</html>
