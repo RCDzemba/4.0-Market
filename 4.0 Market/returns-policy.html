@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Returns Policy - Bazara Tech Market</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        :root {
+            --primary-bg: #f4f4f4;
+            --secondary-bg: #ffffff;
+            --text-primary: #121212;
+            --text-secondary: #666666;
+            --accent: #000000;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header {
+            background-color: var(--secondary-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+
+        .main-content {
+            margin-top: 90px;
+            padding: 2rem 0;
+        }
+
+        .returns-section {
+            background-color: var(--secondary-bg);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .returns-section h1 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .returns-content {
+            color: var(--text-secondary);
+        }
+
+        .returns-content h2 {
+            color: var(--text-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .returns-content p {
+            margin-bottom: 1rem;
+        }
+
+        .returns-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box {
+            background-color: var(--primary-bg);
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .returns-section {
+                padding: 1.5rem;
+            }
+
+            .returns-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="bazara-about-page.html">
+                <img src="logo4.png" alt="Bazara Logo" class="logo" width="65" height="auto">
+            </a>
+            <nav class="nav-menu">
+                <a href="#">Home</a>
+                <a href="#">Laptops</a>
+                <a href="#">Smartphones</a>
+                <a href="#">Gaming</a>
+                <a href="#" class="cart-icon">
+                    Cart
+                    <span class="cart-count">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="returns-section">
+            <h1>Returns Policy</h1>
+            <div class="returns-content">
+                <p>At Bazara, we are committed to ensuring your complete satisfaction with your purchase. We understand that sometimes a product may not meet your expectations, and we've designed our returns policy to be transparent and customer-friendly.</p>
+
+                <div class="highlight-box">
+                    <strong>30-Day Satisfaction Guarantee:</strong> We offer a hassle-free 30-day return policy for most products from the date of purchase.
+                </div>
+
+                <h2>Eligibility for Returns</h2>
+                <p>To be eligible for a return, the following conditions must be met:</p>
+                <ul>
+                    <li>Item must be returned within 30 days of the original purchase date</li>
+                    <li>Product must be in its original, unopened packaging</li>
+                    <li>All accessories and documentation must be included</li>
+                    <li>Item must be in new, unused condition</li>
+                </ul>
+
+                <h2>Non-Returnable Items</h2>
+                <p>Some items cannot be returned due to hygiene or safety reasons:</p>
+                <ul>
+                    <li>Opened software</li>
+                    <li>Personalized or custom-configured products</li>
+                    <li>Intimate electronic devices</li>
+                    <li>Items marked as final sale</li>
+                </ul>
+
+                <h2>Return Process</h2>
+                <p>To initiate a return, please follow these steps:</p>
+                <ul>
+                    <li>Contact our customer support team to obtain a Return Merchandise Authorization (RMA) number</li>
+                    <li>Pack the item securely in its original packaging</li>
+                    <li>Include the RMA number on the outside of the package</li>
+                    <li>Ship the item to our returns center using a trackable shipping method</li>
+                </ul>
+
+                <h2>Refund Processing</h2>
+                <p>Upon receiving and inspecting your return:</p>
+                <ul>
+                    <li>Refunds will be processed within 5-7 business days</li>
+                    <li>Original payment method will be credited</li>
+                    <li>Shipping costs for returns are the responsibility of the customer unless the item is defective</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Defective Items:</strong> If you receive a defective product, we will cover return shipping costs and provide a replacement or full refund.
+                </div>
+
+                <h2>Warranty Information</h2>
+                <p>Manufacturer warranties vary by product. Please refer to the specific warranty information included with your purchase for long-term product protection.</p>
+
+                <h2>Contact Us</h2>
+                <p>If you have any questions about our returns policy, please contact our customer support team:</p>
+                <ul>
+                    <li>Email: returns@bazara.tech</li>
+                    <li>Phone: +27 72 211-0805</li>
+                    <li>Hours: Monday - Friday, 9 AM - 6 PM PST</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+   
